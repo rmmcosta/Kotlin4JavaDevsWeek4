@@ -65,8 +65,6 @@ class Rational(numerator: BigInteger, denominator: BigInteger = ONE) : Comparabl
             else -> 1
         }
     }
-
-    operator fun rangeTo(other: Rational): RationalRange = RationalRange(this, other)
 }
 
 private fun getSimplified(numerator: BigInteger, denominator: BigInteger): Pair<BigInteger, BigInteger> {
