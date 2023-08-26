@@ -2,8 +2,11 @@ package rationals
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
+import org.junit.Rule
 import org.junit.Test
+import org.junit.rules.ExpectedException
 import java.math.BigInteger
+
 
 class MyTestRationals {
     @Test
@@ -189,5 +192,15 @@ class MyTestRationals {
             "884359508704835805965897828865092484822".toBigInteger()
         )
         assertEquals(result, rational1 + rational2)
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun shouldThrowIllegalArgumentExceptionWhenWrongParameters() {
+        "xpto".toBigInteger() divBy "coiso".toBigInteger()
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun shouldThrowIllegalArgumentExceptionWhenWrongParametersConvertingToRational() {
+        "xpto_coiso".toRational()
     }
 }

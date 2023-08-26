@@ -53,8 +53,10 @@ class TestGameBoard {
     fun test05TheSameCell() {
         val gameBoard = createGameBoard<Char>(2)
         gameBoard[1, 1] = 'a'
+        println(gameBoard[1,1])
         val cell1 = gameBoard.find { it == 'a' }
         gameBoard[1, 1] = 'b'
+        println(gameBoard[1,1])
         val cell2 = gameBoard.find { it == 'b' }
         Assert.assertEquals(cell1, cell2)
     }
